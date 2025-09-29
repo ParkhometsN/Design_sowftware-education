@@ -1,4 +1,3 @@
-import ButtonForMyApp from "./components/ui/button"
 
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
   }
   return (
     <>
-    <ButtonForMyApp onClick={GetAnswer}/>
     </>
   )
 }
