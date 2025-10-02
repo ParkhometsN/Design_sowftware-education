@@ -1,4 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 @font-face {
   font-family: 'coolvetica_rg';
   src: url(./font/coolvetica_rg.ttf);
@@ -30,4 +36,26 @@
 .positionalerts{
   position: absolute;
   top: 5%;
+}
+.NavButton{
+  border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    width: 304px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+.NavButton:hover{
+      background-color: var(--blueopac);
+      color: var(--primary);
+}
+
+.NavButton:active{
+        background-color: white;
+        color: #CDDBF8;
 }

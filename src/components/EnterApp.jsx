@@ -4,7 +4,7 @@ import MainInput from './ui/input';
 import ErrorAlertRed from './Alerts/ErrorAlertRED.jsx';
 import SuccessAlertGreen from './Alerts/SuccessALertGreen.jsx';
 
-function EnterAppDSW() {
+function EnterAppDSW({onLoginSuccess}) {
   const [email, setEmail] = useState('');
   const [alert, setAlert] = useState({
     visible: false,
@@ -12,7 +12,7 @@ function EnterAppDSW() {
     message: '',
   });
 
-  const validEmails = ['test@example.com', 'user@example.com'];
+  const validEmails = ['test@example.com', 'user@example.com', 'parkhometsnikita@gmail.com', '@'];
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,6 +41,11 @@ function EnterAppDSW() {
         type: 'success',
         message: 'Вход выполнен успешно!',
       });
+      setTimeout(() => {
+        if (onLoginSuccess) {
+          onLoginSuccess();
+        }
+      }, 500); 
     } else {
       setAlert({
         visible: true,
