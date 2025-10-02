@@ -1,7 +1,28 @@
+
+@font-face {
+  font-family: 'coolvetica_rg';
+  src: url(./font/coolvetica_rg.ttf);
+}
+
+
 @import "tailwindcss";
 
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'coolvetica_rg';
   line-height: 1.5;
   font-weight: 400;
+  --blueopac: #CDDBF8;
+  --midleprimary: #7BA4FB;
+  --primary: #0051FF;
+
+}
+
+.custom-input-main-input::placeholder {
+  color: var(--midleprimary) !important;
+  opacity: 1 !important;
+}
+
+.custom-input-main-input .ant-input::placeholder {
+  color: var(--midleprimary) !important;
 }
