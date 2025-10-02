@@ -12,7 +12,7 @@ function EnterAppDSW({onLoginSuccess}) {
     message: '',
   });
 
-  const validEmails = ['test@example.com', 'user@example.com', 'parkhometsnikita@gmail.com', '@'];
+  const validEmails = ['test@example.com', 'user@example.com', 'parkhometsnikita@gmail.com', '@', 'vika@mail.com'];
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
