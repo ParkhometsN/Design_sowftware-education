@@ -1,10 +1,11 @@
 import { Button } from 'antd';
 
-function MainButton({ className,textbutton}) {
+function MainButton({ className,textbutton,onClick}) {
   return (
     <Button
     type="primary"
     className={className}
+    onClick={onClick}
     style={{
       fontSize: '19px',
       height: '45px',

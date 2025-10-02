@@ -26,3 +26,8 @@
 .custom-input-main-input .ant-input::placeholder {
   color: var(--midleprimary) !important;
 }
+
+.ErrorAlertRED{
+  position: absolute;
+  top: 5%;
+}
