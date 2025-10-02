@@ -56,10 +56,14 @@ function EnterAppDSW() {
   return (
     <>
         {alert.visible && alert.type === 'success' && (
-            <SuccessAlertGreen TextSuccessAlert={alert.message} />
+            <SuccessAlertGreen
+             TextSuccessAlert={alert.message}
+             className='positionalerts' />
         )}
         {alert.visible && alert.type === 'error' && (
-            <ErrorAlertRed TextErrorAlertRED={alert.message} />
+            <ErrorAlertRed 
+            TextErrorAlertRED={alert.message}
+            className='positionalerts' />
         )}
       <div className="text-3xl">
         <p>Вход</p>
@@ -72,6 +76,7 @@ function EnterAppDSW() {
       <MainButton
         className="max-w-[542px] w-full"
         textbutton="Вход"
+        type='sumbit'
         onClick={handleLogin}
       />
     </>

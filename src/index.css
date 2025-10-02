@@ -27,7 +27,7 @@
   color: var(--midleprimary) !important;
 }
 
-.ErrorAlertRED{
+.positionalerts{
   position: absolute;
   top: 5%;
 }
