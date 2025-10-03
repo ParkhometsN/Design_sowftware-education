@@ -21,7 +21,7 @@
   line-height: 1.5;
   font-weight: 400;
   --blueopac: #CDDBF8;
-  --midleprimary: #7BA4FB;
+  --midleprimary: #8aaffe;
   --primary: #0051FF;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -71,6 +71,7 @@
   top: 5%;
 }
 .NavButton{
+  margin-top: 0.6rem;
   border-radius: 10px;
     cursor: pointer;
     padding: 10px;
@@ -80,18 +81,10 @@
     gap: 10px;
     align-items: center;
     font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-size: 0.8rem;
     transition: all 0.2s ease;
 }
-.NavButton:hover{
-      background-color: var(--blueopac);
-      color: var(--primary);
-}
 
-.NavButton:active{
-        background-color: white;
-        color: #CDDBF8;
-}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -178,10 +171,73 @@
   padding: 40px;
 }
 
-.navigationbuttons{
-  padding-top: 26px;
+
+.activestate_navigaton{
+      background-color: var(--blueopac);
+      color: var(--primary);
+}
+.activestate_navigaton:active{
+        background-color: white;
+        color: #CDDBF8;
 }
 
-.containetexit{
-  padding-top: 14rem;
+.NavButton:hover{
+      background-color: var(--blueopac);
+      color: var(--primary);
+}
+
+.NavButton:active{
+        background-color: white;
+        color: #CDDBF8;
+}
+
+
+.navigationbar_content{
+  height: 100vh;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-remix{
+  padding-bottom: 2rem;
+  border-radius: 20px;
+  width: 304px;
+
+  height: 330px;
+  border: none;
+  box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
+}
+/* .calendar-remix .rdp-row:last-child {
+  display: none;
+} */
+
+.calendar-remix .rdp-day {
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 0.8rem !important;
+}
+
+.calendar-remix .rdp-day:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.calendar-remix .rdp-day_selected {
+  background-color: #ff0000;
+
+      border: none;
+}
+
+.calendar-remix .rdp-day_selected:hover {
+  background-color: #ff0000;
+}
+
+.NameOfUser{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.PositionUser{
+  font-size: 0.9rem;
+  opacity: 0.5;
 }

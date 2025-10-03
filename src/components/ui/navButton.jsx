@@ -1,8 +1,8 @@
-function NavButtonWithoutIcon({textbutton,onClick}) {
+function NavButtonWithoutIcon({textbutton,onClick,className}) {
     return(
         <>
         <button
-        className='NavButton'
+        className={className}
         onClick={onClick}
         >
         {textbutton}

@@ -3,9 +3,10 @@
 import * as React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
+import { ru } from "date-fns/locale"
 
 export default function Calendar01() {
-  const [date, setDate] = React.useState(new Date(2025, 5, 12))
+  const [date, setDate] = React.useState(new Date())
 
   return (
     <Calendar
@@ -13,6 +14,9 @@ export default function Calendar01() {
       defaultMonth={date}
       selected={date}
       onSelect={setDate}
-      className="rounded-lg border shadow-sm" />
+      locale={ru}
+      fixedWeeks
+      showOutsideDays={false} 
+      className="rounded-lg border shadow-sm calendar-remix" />
   );
 }
