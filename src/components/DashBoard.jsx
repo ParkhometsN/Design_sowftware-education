@@ -20,13 +20,15 @@ function DashBoard({ onLogout }) {
             <div className="main_container flex">
                 <div className="navigationbar_content">
                     <div className="upcontentnavigation">
-                        <div className="pb-[40px]">
+                        <div className="pb-[1vw]">
                             <WhoisInApp
                                 NameUser='Имя Фамилия'
                                 PositionUser='Руководитель'
                             />
                         </div>
-                        <Calendar01/> 
+                        <div className="qkrengljkgnlwerl">
+                            <Calendar01/> 
+                        </div>
                         <div className="navigationbuttons">
                             <NavButtonWithoutIcon
                                 textbutton='Обзор'

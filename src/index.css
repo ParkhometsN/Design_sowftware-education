@@ -77,7 +77,7 @@
   cursor: pointer;
   padding: 12px 16px;
   background-color: white;
-  width: 304px;
+  width: 17vw;
   display: block; /* меняем flex на block */
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
@@ -136,11 +136,17 @@
 .calendar-remix{
   padding-bottom: 2rem;
   border-radius: 20px;
-  width: 304px;
-  height: 290px;
+  width: 17vw;
+  height: 36.5vh;
   border: none;
   box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
 }
+.calendar-remix {
+  background-color: #f9fafb; /* Светлый фон */
+  padding:10px 1vw;
+  font-family: 'Inter', sans-serif; /* Шрифт */
+}
+
 
 .calendar-remix .rdp-day {
   border-radius: 50%;
@@ -243,11 +249,6 @@
 /* styles/Calendar01.css */
 
 /* Основной контейнер календаря */
-.calendar-remix {
-  background-color: #f9fafb; /* Светлый фон */
-  padding:10px 36px;
-  font-family: 'Inter', sans-serif; /* Шрифт */
-}
 
 /* Заголовок календаря (месяц и год) */
 .calendar-remix .react-calendar__navigation {
@@ -297,4 +298,8 @@
 .calendar-remix .react-calendar__tile--disabled {
   background-color: #f3f4f6;
   color: #9ca3af;
+}
+
+.qkrengljkgnlwerl{
+  padding-bottom: 1vw;
 }
