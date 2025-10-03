@@ -2,11 +2,12 @@ function NavButton({textbutton,onClick,url}) {
     return(
         <>
         <button
-        className='NavButton'
+        className='NavButton qoperignri'
         onClick={onClick}
         >
         {url}
-        {textbutton}
+        <p>{textbutton}</p>
+
         </button>
         </>
     )

@@ -1,14 +1,13 @@
-function NavButtonWithoutIcon({textbutton,onClick,className}) {
-    return(
-        <>
+// ui/navButton.jsx
+function NavButtonWithoutIcon({ textbutton, onClick, className, isActive }) {
+    return (
         <button
-        className={className}
-        onClick={onClick}
+            className={`${className} ${isActive ? 'activestate_navigaton' : ''}`}
+            onClick={onClick}
         >
-        {textbutton}
+            {textbutton}
         </button>
-        </>
-    )
+    );
 }
 
 export default NavButtonWithoutIcon;

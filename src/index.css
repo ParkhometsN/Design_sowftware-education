@@ -54,7 +54,6 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-
 }
 
 .custom-input-main-input::placeholder {
@@ -70,21 +69,115 @@
   position: absolute;
   top: 5%;
 }
+
+/* ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КНОПОК */
 .NavButton{
   margin-top: 0.6rem;
   border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: white;
-    width: 304px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 12px 16px;
+  background-color: white;
+  width: 304px;
+  display: block; /* меняем flex на block */
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  text-align: left; /* выравнивание текста по левому краю */
+  border: none; /* убираем границу */
+  position: relative; /* для псевдоэлементов */
 }
 
+/* Псевдоэлемент для увеличения кликабельной области */
+.NavButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.activestate_navigaton{
+  cursor: pointer;
+  background-color: var(--blueopac);
+  color: var(--primary);
+}
+
+.activestate_navigaton:active{
+  cursor: pointer;
+  background-color: white;
+  color: #CDDBF8;
+}
+
+.NavButton:hover{
+  background-color: var(--blueopac);
+  color: var(--primary);
+}
+
+.NavButton:active{
+  background-color: white;
+  color: #CDDBF8;
+}
+
+/* Убедимся, что текст всегда кликабелен */
+.NavButton * {
+  pointer-events: none;
+}
+
+.navigationbar_content{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.calendar-remix{
+  padding-bottom: 2rem;
+  border-radius: 20px;
+  width: 304px;
+  height: 290px;
+  border: none;
+  box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
+}
+
+.calendar-remix .rdp-day {
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  font-size: 0.8rem !important;
+}
+
+.calendar-remix .rdp-day:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.calendar-remix .rdp-day_selected {
+  background-color: #ff0000;
+  border: none;
+}
+
+.calendar-remix .rdp-day_selected:hover {
+  background-color: #ff0000;
+}
+
+.NameOfUser{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.PositionUser{
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+.titlepage{
+  font-family: 'coolvetica_rg';
+  font-weight: 100;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -124,39 +217,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
-}
 
 @layer base {
   * {
@@ -167,77 +227,74 @@
   }
 }
 
-.navigationbar_content{
-  padding: 40px;
+.qoperignri{
+  display: flex;
+  align-content: center;
+  gap: 1rem;
+}
+.qoperignri p{
+  padding-top: 2px;
 }
 
 
-.activestate_navigaton{
-      background-color: var(--blueopac);
-      color: var(--primary);
-}
-.activestate_navigaton:active{
-        background-color: white;
-        color: #CDDBF8;
-}
 
-.NavButton:hover{
-      background-color: var(--blueopac);
-      color: var(--primary);
+
+
+/* styles/Calendar01.css */
+
+/* Основной контейнер календаря */
+.calendar-remix {
+  background-color: #f9fafb; /* Светлый фон */
+  padding:10px 36px;
+  font-family: 'Inter', sans-serif; /* Шрифт */
 }
 
-.NavButton:active{
-        background-color: white;
-        color: #CDDBF8;
-}
-
-
-.navigationbar_content{
-  height: 100vh;
-    display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.calendar-remix{
-  padding-bottom: 2rem;
-  border-radius: 20px;
-  width: 304px;
-
-  height: 330px;
-  border: none;
-  box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
-}
-/* .calendar-remix .rdp-row:last-child {
-  display: none;
-} */
-
-.calendar-remix .rdp-day {
-  border-radius: 50%;
-  transition: all 0.2s ease;
-  font-size: 0.8rem !important;
-}
-
-.calendar-remix .rdp-day:hover {
-  background-color: var(--primary);
+/* Заголовок календаря (месяц и год) */
+.calendar-remix .react-calendar__navigation {
+  background-color: #3b82f6; /* Синий фон для навигации */
   color: white;
+  border-radius: 1px;
+  margin-bottom: 2px;
 }
 
-.calendar-remix .rdp-day_selected {
-  background-color: #ff0000;
-
-      border: none;
+/* Кнопки навигации (стрелки) */
+.calendar-remix .react-calendar__navigation__arrow {
+  color: white;
+  font-size: 0.2rem;
+  padding: 1px !important;
 }
 
-.calendar-remix .rdp-day_selected:hover {
-  background-color: #ff0000;
+/* Дни недели */
+.calendar-remix .react-calendar__month-view__weekdays {
+  color: #1f2937; /* Тёмный цвет для дней недели */
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.NameOfUser{
-  font-size: 1.2rem;
-  font-weight: 500;
+/* Ячейки дней */
+.calendar-remix .react-calendar__tile {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 1px;
+  transition: background-color 0.2s ease;
 }
-.PositionUser{
-  font-size: 0.9rem;
-  opacity: 0.5;
+
+/* Выбранный день */
+.calendar-remix .react-calendar__tile--active {
+  background-color: #3b82f6; /* Синий фон для выбранного дня */
+  color: white;
+  border: none;
+}
+
+/* При наведении на день */
+.calendar-remix .react-calendar__tile:hover {
+  background-color: #bfdbfe; /* Светло-синий при наведении */
+  cursor: pointer;
+}
+
+/* Отключённые дни (например, из других месяцев) */
+.calendar-remix .react-calendar__tile--disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
 }
