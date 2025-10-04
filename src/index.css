@@ -15,7 +15,9 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
+body{
+  background-color: #F7F7F7;
+}
 :root {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
@@ -76,7 +78,7 @@
   border-radius: 10px;
   cursor: pointer;
   padding: 12px 16px;
-  background-color: white;
+  background-color: transparent;
   width: 17vw;
   display: block; /* меняем flex на block */
   font-family: "Inter", sans-serif;
