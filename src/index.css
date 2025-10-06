@@ -33,16 +33,20 @@ body{
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(98.809% 0.00011 271.152);
+  --secondary-foreground: oklch(55.706% 0.244 263.832);
+
+
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
+  --accent: #e7e7e7;
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
+
+  
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --ring: oklch(70.382% 0.04025 257.029 / 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -135,11 +139,16 @@ body{
   padding: 40px;
 }
 
+
+.background_shadow{
+   box-shadow: 0 3px 16.6px 0 rgba(0, 0, 0, 0.09);
+}
+
 .calendar-remix{
   padding-bottom: 2rem;
   border-radius: 20px;
   width: 17vw;
-  height: 36.5vh;
+  height: 20vw;
   border: none;
   box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
 }
@@ -277,7 +286,7 @@ body{
 /* Ячейки дней */
 .calendar-remix .react-calendar__tile {
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 3px solid #e5e7eb00;
   border-radius: 4px;
   padding: 1px;
   transition: background-color 0.2s ease;
@@ -304,4 +313,189 @@ body{
 
 .qkrengljkgnlwerl{
   padding-bottom: 1vw;
+}
+
+.active_button_contquner{
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  background-color: #F0F0F0;
+  border-radius: 20px;
+
+}
+.button_active_dash{
+  font-size: 1vw;
+  display: flex;
+  gap: 10px;
+  padding: 10px 13px;
+    transition: all 0.3s ease;
+}
+
+.button_active_dash svg path {
+  fill: #787878 !important;
+}
+
+.button_active_dash.active{
+background-color: white;
+border-radius: 16px;
+}
+
+
+.active svg path {
+  fill: var(--primary) !important;
+}
+.main_active_block{
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+}
+.tasks{
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+.tasks_container{
+    padding: 10px;
+    background-color: #F0F0F0;
+    border-radius: 12px;
+}
+
+.prpject_container{
+  margin-top: 20px;
+}
+.main_active_block{
+  display: flex;
+}
+.Copmleted{
+    padding: 2px 8px;
+  background-color: #DCFCE7;
+  color: #166534;
+  font-size: 13px;
+  border-radius: 12px;
+}
+.InProcess{
+  padding: 2px 8px;
+  background-color: #DBEAFE;
+  color: #1D4ED8;
+  font-size: 13px;
+  border-radius: 12px;
+}
+.archoved{
+  padding: 2px 8px;
+  background-color: #F1F5F9;
+  color: #64748B;
+  font-size: 13px;
+  border-radius: 12px;
+}
+.tasktabqwefqwef{
+
+  width: 24.8vw;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: white;
+  padding: 13px;
+}
+
+.dopinfomatuon{
+  display: flex;
+  justify-content:space-between;
+  padding-top: 10px;
+}
+
+.description_tasks{
+  padding-top: 7px;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Ограничение в 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.title_task_button{
+  font-size: 17px;
+}
+
+.description_tasks{
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+
+.timeOftasks{
+  color: #0051FF;
+  font-size: 14px;
+}
+
+.tastks_content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 67vh;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.user_active_main{
+  padding: 2rem 2rem 2rem 0rem;
+}
+
+.wefu{
+  display: flex;
+}
+
+.main_active_block{
+  display: flex;
+  flex-direction: row;
+}
+
+.button_input_project{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.projects{
+  width: 45vw;
+}
+
+.add_project_mainButtin{
+  font-size: 1vw !important;
+  width: 580px;
+}
+
+
+.add_task_mainButtin{
+  font-size: 1vw !important;
+  width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+.Addtaskalert{
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00000002;
+}
+
+
+.Addtaskaler.open{
+visibility: visible;
 }

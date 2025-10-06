@@ -80,7 +80,7 @@ function EnterAppDSW({onLoginSuccess}) {
       />
       <MainButton
         className="max-w-[542px] w-full"
-        textbutton="Вход"
+        textbutton={"Вход"}
         type='sumbit'
         onClick={handleLogin}
       />

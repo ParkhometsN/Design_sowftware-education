@@ -58,7 +58,7 @@ function DashBoard({ onLogout }) {
                         />
                     </div>
                 </div> 
-                <div className="user_active_main p-[2rem]">
+                <div className="user_active_main">
                     {VisiblePage === 'page1' && <MainActive className='activestate_navigaton'/>}
                     {VisiblePage === 'page2' && <Staff className='activestate_navigaton'/>}
                     {VisiblePage === 'page3' && <Archive className='activestate_navigaton'/>}

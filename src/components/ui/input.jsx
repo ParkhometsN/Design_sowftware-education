@@ -2,9 +2,10 @@
 import { Input } from 'antd';
 
 
-function MainInput({value, onChange, placeholder}){
+function MainInput({value, onChange, placeholder,icon}){
     return(
         <Input
+            prefix={icon}
             type="email"
             value={value}
             onChange={onChange}
