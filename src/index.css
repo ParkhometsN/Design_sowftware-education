@@ -43,7 +43,7 @@ body{
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
 
-  
+  --reddd: #DC0000;
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(70.382% 0.04025 257.029 / 0);
@@ -136,12 +136,27 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px;
+  padding: 40px 20px 40px 20px;
+}
+.background_shadowdd {
+  filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.04));
 }
 
-
 .background_shadow{
-   box-shadow: 0 3px 16.6px 0 rgba(0, 0, 0, 0.09);
+  position: relative;
+
+}
+.background_shadow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 2px 16.6px 0 rgba(0, 0, 0, 0.09);
+  pointer-events: none; /* Чтобы не блокировал клики */
+  border-radius: 16px; /* Та же скругленность что у контейнера */
+  z-index: -1; /* Помещаем под контент */
 }
 
 .calendar-remix{
@@ -321,7 +336,7 @@ body{
   padding: 5px;
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 27px;
   background-color: #F0F0F0;
   border-radius: 20px;
 
@@ -330,7 +345,7 @@ body{
   font-size: 1vw;
   display: flex;
   gap: 10px;
-  padding: 10px 13px;
+  padding: 9px 10px;
     transition: all 0.3s ease;
 }
 
@@ -419,6 +434,12 @@ border-radius: 16px;
 
 .title_task_button{
   font-size: 17px;
+    text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Ограничение в 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .description_tasks{
@@ -459,17 +480,18 @@ border-radius: 16px;
 
 .button_input_project{
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: space-between;
+  padding-bottom: 17px;
 }
 
 .projects{
-  width: 45vw;
+  width: 50vw;
 }
 
 .add_project_mainButtin{
   font-size: 1vw !important;
-  width: 580px;
+  width: 720px;
 }
 
 
@@ -481,21 +503,145 @@ border-radius: 16px;
 
 
 
-
-
-
-
-
-
-.Addtaskalert{
-  visibility: hidden;
+.addtask_container{
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
   width: 100%;
   height: 100%;
-  background-color: #00000002;
+  top: 0;
+  left: 0;
+  background-color: #00000084;
 }
 
 
-.Addtaskaler.open{
-visibility: visible;
+.Addtaskalert{
+  border-radius: 20px;
+  padding: 10px;
+  width: 481px;
+  background-color: #F7F7F7;
+  height: 539px;
+}
+
+
+
+.closedButton{
+  cursor: pointer;
+  border: 2px #DCD9D9 solid;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.closedButton:hover{
+  border: 2px white solid;
+  background-color: var(--reddd);
+}
+
+.closedButton:hover svg path{ 
+  stroke: white;
+}
+
+.title_closed{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_closed p{
+  padding-left: 9px;
+    font-family: 'coolvetica_rg';
+    font-size: 25px;
+    color: #272727;
+    letter-spacing: 1px;
+}
+
+.Addprojectalert{
+    border-radius: 20px;
+  padding: 10px;
+  width: 1250px;
+  background-color: #F7F7F7;
+  height: 736px;
+}
+
+.project_items_button{
+  overflow: hidden;
+   overflow-y: auto;
+     height: 78vh;
+     border-radius: 16px;
+      position: relative;
+}
+.projectbutton{
+  cursor: pointer;
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.title_ofproject{
+  letter-spacing: 1px;
+  font-size: 22px;
+    font-family: 'coolvetica_rg';
+        line-height: 23px;
+            text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Ограничение в 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+.down_information_projecvt,
+.time_order{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.DescriptionProject{
+          line-height: 16px;
+  opacity: 0.6;
+  font-size: 13px;
+              text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Ограничение в 2 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.down_information_projecvt{
+  padding-top: 15px;
+}
+.time_order{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.task_count{
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.orederhuman{
+  font-size: 14px;
+  color: #0051FF;
+  padding: 5px 7px;
+  background-color: #F0F0F0;
+  border-radius: 6px;
+}
+.TimeOFproject{
+  font-size: 14px;
+  color: #000000;
+  padding: 5px 7px;
+  border: 1px #D9D9D9 solid ;
+  background-color: white;
+  border-radius: 6px;
 }

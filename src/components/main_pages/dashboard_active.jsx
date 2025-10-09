@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import TaskButtonDahsboard from "./litleconponents/task_button";
 import InProcess from "./litleconponents/progress/inprocess";
 import Archived from "./litleconponents/progress/archived";
@@ -6,70 +6,139 @@ import Copmleted from "./litleconponents/progress/completed";
 import Button_Dachbptar from "../ui/main-button";
 import MainInput from "../ui/input"
 import AddTaskAlert from "../Alerts/Add_task_alert";
+import AddProjectAlert from "../Alerts/add_project";
+import ProjectButton from "./litleconponents/project_button";
+import { Row, Col} from 'antd';
 
 
 
 export default function MainActive(){
     const [active,setactive] = useState('activebutton1')
-    const [TaskAlert,setTaskAlert] = useState('')
-
-    function openalerttask(TaskAlert){
-        setTaskAlert(TaskAlert)
-    }
-
+    const [addtask,setAddTask] = useState(false)
+    const [addprioject,setaddproject] = useState(false)
+    // const [searchTerm, setSearchTerm] = useState('');
     const HandleButtonActive = (buttonactive) => {
         setactive(buttonactive)
     }
     const Data_Task_= [
         {
-            TitleOFTasks:'Сделать wireframe',
+            TitleOFTasks:'Разработка интернет магазина MAin-shop',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'completed'
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'active'
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
+            
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'completed'
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'archivedd'
+            activepin:'archivedd',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'active'
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'completed'
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'active'
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
         },
         {
             TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: 'Среда 29, 12:00 - 12:30',
-            activepin:'active'
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
         }
     ]
+    const Data_Project_ = [
+        {
+            TitleOFTasks:'Разработка интернет магазина MAin-shop',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
+            
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'archivedd',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'completed',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
+        },
+        {
+            TitleOFTasks:'Сделать wireframe',
+            DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
+            TimeOFTask: '19.09.2025',
+            activepin:'active',
+            orederhuman: "Виктор Игорович"
+        }
+    ];
+    
     function ChekActive(taskactivepin){
         if (taskactivepin === "active"){
             return <InProcess/>;
@@ -81,12 +150,22 @@ export default function MainActive(){
     }  
     return(
         <>
+        <div className="alerts">
+            {addtask && (
+                <AddTaskAlert
+                closedAddtask={() => setAddTask(false)}
+                />
+            )}
+            {addprioject && (
+                <AddProjectAlert
+                closedAddproject={() => setaddproject(false)}
+                />
+            )}
+        </div>
         <div className="title_block">
             <p className="titlepage">Проекты</p>
         </div>
-        <div className="alerts">
-            {` ${TaskAlert === 'activealerttask' ? 'active' : ''}`}<AddTaskAlert onClick={() => openalerttask('activealerttask')} />
-        </div>
+
         <div className="main_active_block">
             <div className="left">
                 <div className="active_button_contquner">
@@ -130,6 +209,7 @@ export default function MainActive(){
                             ))}
                         </div>
                         <Button_Dachbptar
+                        onClick={() => setAddTask(true)}
                         textbutton={'Добавить задачу'}
                         className='add_task_mainButtin'
                         icon={<svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
@@ -144,6 +224,7 @@ export default function MainActive(){
                     <div className="project_content">
                         <div className="button_input_project">
                             <Button_Dachbptar
+                            onClick={() => setaddproject(true)}
                             textbutton={'Добавить проект'}
                             className='add_project_mainButtin'
                             icon={<svg xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28" fill="none">
@@ -163,6 +244,24 @@ export default function MainActive(){
                                 </svg>}
                                 placeholder='Поиск проекта'
                             />
+                        </div>
+                        <div className="project_items_button ">
+                            <div className="grid_projectitems">
+                                <Row gutter={[16, 16]}>
+                                    {Data_Project_.map((task,index) => (
+                                    <Col key={index} span={12}>
+                                        <ProjectButton
+                                            key={index}
+                                            TitleProject={task.TitleOFTasks}
+                                            DescriptionProject={task.DescriptionTask}
+                                            TimeOFproject={task.TimeOFTask}
+                                            orederhuman={task.orederhuman}
+                                            activepin={ChekActive(task.activepin)}
+                                        />
+                                    </Col>
+                                    ))}
+                                </Row>
+                            </div>
                         </div>
                     </div>
                 </div>
