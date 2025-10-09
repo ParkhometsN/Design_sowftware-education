@@ -1,8 +1,8 @@
-function NavButton({textbutton,onClick,url}) {
+function NavButton({textbutton,onClick,url,exitstyle}) {
     return(
         <>
         <button
-        className='NavButton qoperignri'
+        className={`NavButton qoperignri ${exitstyle}`}
         onClick={onClick}
         >
         {url}

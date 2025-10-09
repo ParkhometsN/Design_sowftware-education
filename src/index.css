@@ -163,7 +163,7 @@ body{
   padding-bottom: 2rem;
   border-radius: 20px;
   width: 17vw;
-  height: 20vw;
+  height: 17vw;
   border: none;
   box-shadow: 0 4px 16.6px 0 rgba(0, 0, 0, 0.09);
 }
@@ -173,11 +173,19 @@ body{
   font-family: 'Inter', sans-serif; /* Шрифт */
 }
 
+.gap-4 {
+    gap: calc(var(--spacing) * 1) !important;
+}
 
 .calendar-remix .rdp-day {
   border-radius: 50%;
   transition: all 0.2s ease;
   font-size: 0.8rem !important;
+}
+
+.exitstyle:hover{
+  color: red !important;
+  background-color: rgba(255, 0, 0, 0.189) !important;
 }
 
 .calendar-remix .rdp-day:hover {
@@ -280,30 +288,30 @@ body{
 .calendar-remix .react-calendar__navigation {
   background-color: #3b82f6; /* Синий фон для навигации */
   color: white;
-  border-radius: 1px;
-  margin-bottom: 2px;
+  border-radius: 100px;
+  margin-bottom: 10px;
 }
 
 /* Кнопки навигации (стрелки) */
 .calendar-remix .react-calendar__navigation__arrow {
   color: white;
-  font-size: 0.2rem;
-  padding: 1px !important;
+  font-size: 5.2rem;
+  padding: 19px !important;
 }
 
 /* Дни недели */
 .calendar-remix .react-calendar__month-view__weekdays {
   color: #1f2937; /* Тёмный цвет для дней недели */
-  font-weight: 600;
+  font-weight: 100;
   text-transform: uppercase;
 }
 
 /* Ячейки дней */
 .calendar-remix .react-calendar__tile {
   background-color: #ffffff;
-  border: 3px solid #e5e7eb00;
-  border-radius: 4px;
-  padding: 1px;
+  border: 10px solid #e5e7eb00;
+  border-radius: 40px;
+  padding: 10px;
   transition: background-color 0.2s ease;
 }
 
@@ -527,13 +535,6 @@ border-radius: 16px;
   background-color: #00000084;
 }
 
-.AddStuffalert{
-  border-radius: 20px;
-  padding: 10px;
-  width: 481px;
-  background-color: #F7F7F7;
-  height: 539px;
-}
 .Addtaskalert{
   border-radius: 20px;
   padding: 10px;
@@ -835,4 +836,78 @@ p {
 
 .newmm{
   color: #166534;
+}
+
+
+.mt-2 {
+    margin-top: calc(var(--spacing) * 0.5) !important;
+}
+
+.NavButton:hover .exitstyle svg path{
+ fill: #ff0000 !important;
+}
+
+.title_closed_stuff{
+  padding-left: 10px;
+  font-size: 23px;
+  letter-spacing: 0.5px;
+    font-family: 'coolvetica_rg';
+}
+.change_container{
+  padding: 20px;
+  background-color: white;
+  width: 100%;margin-top: 16px;
+  border-radius: 16px;
+  height: 275px;
+    filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
+}
+
+
+.AddStuffalert{
+  border-radius: 20px;
+  padding: 10px;
+  width: 481px;
+  background-color: #F7F7F7;
+  height: 350px;
+}
+
+.newinputtt{
+  font-weight: 400;
+  width: 100%;
+  height: 37px;
+  font-size: 16px;
+}
+.contacts{
+  padding-bottom: 13px;
+  padding-top: 13px;
+  gap: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.buttondropdown_custom{
+  width: 100%;
+  height: 37px;
+}
+.anticon svg {
+    color: #0051FF;
+    display: inline-block;
+}
+
+.desckjk p{
+  line-height: 17px;
+  padding-top: 10px;
+  opacity: 0.2;
+}
+
+
+.time_and_button{
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time_and_button p{
+  font-size: 13px;
+  opacity: 0.4;
 }
