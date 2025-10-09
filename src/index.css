@@ -796,3 +796,43 @@ p {
   display: flex;
   gap: 10px;
 }
+
+ .title_archive{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+ }
+
+ .ccountproject{
+  opacity: 0.6;
+  font-size: 12px;
+ }
+.input_search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newinput{
+  width: 24.8vw;
+  height: 2.8vw;
+}
+
+.input_search{
+  padding-top: 16px;
+}
+.svg_size{
+  width: 10px;
+  height: 10px;
+}
+
+.data_base_of_priject_ready{
+  height: 79vh;
+  padding-top: 16px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.newmm{
+  color: #166534;
+}
