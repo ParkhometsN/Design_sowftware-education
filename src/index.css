@@ -501,7 +501,18 @@ border-radius: 16px;
 }
 
 
-
+.addStuff_container{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000084;
+}
 
 .addtask_container{
   position: absolute;
@@ -516,7 +527,13 @@ border-radius: 16px;
   background-color: #00000084;
 }
 
-
+.AddStuffalert{
+  border-radius: 20px;
+  padding: 10px;
+  width: 481px;
+  background-color: #F7F7F7;
+  height: 539px;
+}
 .Addtaskalert{
   border-radius: 20px;
   padding: 10px;
@@ -543,6 +560,12 @@ border-radius: 16px;
 
 .closedButton:hover svg path{ 
   stroke: white;
+}
+
+.title_closed_stuff{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title_closed{
@@ -644,4 +667,132 @@ p {
   border: 1px #D9D9D9 solid ;
   background-color: white;
   border-radius: 6px;
+}
+
+.container_content_of_page{
+  padding: 10px;
+  width: 78vw;
+}
+.titile_stuff_page{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.count_stuff{
+  opacity: 0.6;
+  font-size: 13px;
+}
+.line{
+  margin-top: 18px;
+  opacity: 0.22;
+  background-color: #000000;
+  height: 1px;
+  width: 100%;
+}
+
+.grid_oftitles_for_stuff{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jeft_tipe{
+  gap: 200px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.wef{
+  margin-right: 20px;
+}
+
+.grid_oftitles_for_stuff_get{
+  cursor: pointer;
+  padding: 12px 0px;
+  background-color: white;
+  border-radius: 16px;
+  border: 2px transparent solid;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.grid_oftitles_for_stuff_get.active{
+    border: 2px #0051FF solid;
+}
+.jeft_tipewef{
+
+    gap: 120px;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stuff_list{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  height: 69vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.taskff{
+  color: #1D4ED8;
+}
+.namestuffff{
+  color: #000000;
+    transition: all 0.3s ease;
+}
+
+.grid_oftitles_for_stuff_get:hover .namestuffff{
+  color: #0051FF;
+}
+
+.ButtonDefault{
+  padding: 5px 20px;
+  border: 1px #D9D9D9 solid;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.buttons_for_stuff{
+  margin-right: auto;
+  padding-top: 16px;
+}
+
+.ButtonDefault:hover{
+  padding: 5px 20px;
+  border: 1px var(--primary) solid;
+  border-radius: 5px;
+    color: var(--primary);
+  background-color: white;
+}
+.ButtonDefault:active{
+    filter: drop-shadow(0px 0px 10.6px rgba(0, 13, 255, 0.24));
+}
+.ButtonDelete{
+  padding: 5px 20px;
+  border: 1px #D9D9D9 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #DC0000;
+  transition: all 0.3s ease;
+}
+.buttons_for_stuff{
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+.get_buttons{
+  display: flex;
+  gap: 10px;
+}
+
+.buttons{
+  display: flex;
+  gap: 10px;
 }

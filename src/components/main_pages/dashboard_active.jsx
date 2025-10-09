@@ -16,7 +16,6 @@ export default function MainActive(){
     const [active,setactive] = useState('activebutton1')
     const [addtask,setAddTask] = useState(false)
     const [addprioject,setaddproject] = useState(false)
-    // const [searchTerm, setSearchTerm] = useState('');
     const HandleButtonActive = (buttonactive) => {
         setactive(buttonactive)
     }
@@ -81,7 +80,7 @@ export default function MainActive(){
     ]
     const Data_Project_ = [
         {
-            TitleOFTasks:'Разработка интернет магазина MAin-shop',
+            TitleOFTasks:'Сделать wireframe',
             DescriptionTask: 'Создать современный, удобный и визуально привлекательный дизайн для интернет-магазина, обеспечивающий комфортный пользовательский опыт, высокую конверсию...',
             TimeOFTask: '19.09.2025',
             activepin:'completed',
