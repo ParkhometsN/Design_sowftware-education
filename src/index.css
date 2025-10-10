@@ -17,6 +17,7 @@
 @custom-variant dark (&:is(.dark *));
 body{
   background-color: #F7F7F7;
+  overflow: hidden;
 }
 :root {
   font-family: "Inter", sans-serif;
@@ -535,6 +536,10 @@ border-radius: 16px;
   background-color: #00000084;
 }
 
+.container-areypushore{
+
+}
+
 .Addtaskalert{
   border-radius: 20px;
   padding: 10px;
@@ -861,7 +866,32 @@ p {
   height: 275px;
     filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
 }
+.white_background_areyoushote{
+  padding: 16px;
 
+  background-color: white;
+  width: 100%;margin-top: 6px;
+  border-radius: 16px;
+  height: 95px;
+  filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
+}
+.dangerwhith{
+  width: 100px;
+}
+.buttonsssss{
+  margin-left: 24vw;
+  padding-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.AddStuffalertAreYpushore{
+    border-radius: 20px;
+  padding: 10px;
+  width: 581px;
+  background-color: #F7F7F7;
+  height: 156px;
+}
 
 .AddStuffalert{
   border-radius: 20px;
@@ -910,4 +940,8 @@ p {
 .time_and_button p{
   font-size: 13px;
   opacity: 0.4;
+}
+
+.areyushireoisition{
+  z-index: 200;
 }
