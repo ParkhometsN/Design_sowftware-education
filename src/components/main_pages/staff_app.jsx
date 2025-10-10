@@ -7,6 +7,7 @@ import ButtonDelete from "../ui/button_delete";
 import StuffButton from "./litleconponents/stuff_button";
 import {useState} from "react";
 
+
 export default function Staff(){
         const [activeIndex, setActiveIndex] = useState(null);
         const [activeAlertStuff,setactiveAlertStuff] = useState(false);
@@ -17,7 +18,7 @@ export default function Staff(){
         const [areyouseredeletestuff,setareyouseredeletestuff] = useState(false)
         const [showsuccessalert,setshowsuccessalert] = useState(false)
 
-        const checkclick = (index) => {
+    const checkclick = (index) => {
             setActiveIndex(activeIndex === index ? null : index);
             if (activeIndex === null){
                 setactivebutton(false)
@@ -26,8 +27,8 @@ export default function Staff(){
                 setactivebutton(true)
                 setactivebuttondelete(false)
             }
-        }
-    const data_staff_ = [
+    }
+    const [data_staff_, setDataStaff] = useState([
         {
         namestuff: 'Иван Иванушка',
         fobtitle: 'Графический дизайнер',
@@ -69,13 +70,38 @@ export default function Staff(){
         taskstuffcount: '13 задач',
         dategetjob: '13.05.2003'
         }
-    ]
+        
+    ])
+    const deleteStaff = () => {
+        if (activeIndex === null) return;
+        
+        // Создаем новый массив без удаленного сотрудника
+        const newStaff = data_staff_.filter((_, index) => index !== activeIndex);
+        setDataStaff(newStaff);
+        
+        // Сбрасываем выбранный индекс
+        setActiveIndex(null);
+        setactivebutton(true);
+        setactivebuttondelete(false);
+    }
+    const addStaff = (newEmployee) => {
+        // Создаем объект нового сотрудника
+        const employeeWithId = {
+            id: Date.now(), // Простой способ получить уникальный ID
+            ...newEmployee  // Разворачиваем данные из формы
+        };
+        
+        // Добавляем в массив
+        const updatedStaff = [...data_staff_, employeeWithId];
+        setDataStaff(updatedStaff);
+    }
     const succesdeletestuff = () => {
+            deleteStaff();
             setshowsuccessalert(true)
             setareyouseredeletestuff(false)
               setTimeout(() => {
                     setshowsuccessalert(false);
-                }, 1000);
+                }, 2000);
     }
     const handleDangerClickalertserq = () => {
             setactiveAreYouShore(false);
@@ -120,7 +146,8 @@ export default function Staff(){
             )}
             {activeAlertStuff && (
                 <AddNewStuff
-                    closedAddtask={() => setactiveAreYouShore(true)}
+                    closedAddtask={() => setactiveAlertStuff(false)}
+                    onAddEmployee={addStaff} // Передаем функцию добавления
                 />
             )}
         </div>

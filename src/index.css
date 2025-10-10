@@ -75,6 +75,7 @@ body{
 .positionalerts{
   position: absolute;
   top: 5%;
+  left: 40%;
 }
 
 /* ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КНОПОК */
@@ -875,6 +876,17 @@ p {
   height: 95px;
   filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
 }
+.title_closed{
+  padding-bottom: 10px;
+}
+.backgroundtask_white{
+  padding: 16px;
+  background-color: white;
+  width: 100%;margin-top: 6px;
+  border-radius: 16px;
+  height: 58.4vh;
+  filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
+}
 .dangerwhith{
   width: 100px;
 }
@@ -919,10 +931,10 @@ p {
   width: 100%;
   height: 37px;
 }
-.anticon svg {
+/* .anticon svg {
     color: #0051FF;
     display: inline-block;
-}
+} */
 
 .desckjk p{
   line-height: 17px;
@@ -944,4 +956,63 @@ p {
 
 .areyushireoisition{
   z-index: 200;
+}
+
+/* 
+input:active{
+  border: none;
+}
+input:hover{
+  border: none;
+}
+input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+} */
+
+input:focus-visible {
+    outline: none;
+}
+
+.inputtitileoftask{
+  font-size: 20px;
+  width: 100%;
+}
+.linetitle{
+  margin-top: 5px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+background-color: #c4c4c48a;
+  transition: all 0.3s ease;
+}
+
+.inputtitileoftask:active ~ .linetitle,
+.inputtitileoftask:focus ~ .linetitle {
+    background-color: #0051FF;
+}
+.inputs_{
+  padding-top: 10px;
+}
+
+.button_downloadddddd{
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+.brothers_dropdown{
+  gap: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+.dropdownbuttonchoose{
+  width: 100%;
+}
+
+.object_drop_down{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
