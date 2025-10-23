@@ -546,7 +546,7 @@ border-radius: 16px;
   padding: 10px;
   width: 481px;
   background-color: #F7F7F7;
-  height: 539px;
+  height: 489px;
 }
 
 
@@ -884,8 +884,8 @@ p {
   background-color: white;
   width: 100%;margin-top: 6px;
   border-radius: 16px;
-  height: 58.4vh;
-  filter: drop-shadow(0 2px 16.6px rgba(0, 0, 0, 0.14));
+  height: 52vh;
+
 }
 .dangerwhith{
   width: 100px;
@@ -1015,4 +1015,18 @@ background-color: #c4c4c48a;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.timepcik{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.timepicker_custom{
+  width: 100%;
+}
+.qergeqrg{
+  margin-top: 16px;
 }

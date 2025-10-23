@@ -9,6 +9,7 @@ import AddTaskAlert from "../Alerts/Add_task_alert";
 import AddProjectAlert from "../Alerts/add_project";
 import ProjectButton from "./litleconponents/project_button";
 import { Row, Col} from 'antd';
+import SuccessAlertGreen from "../Alerts/SuccessALertGreen";
 
 
 
@@ -16,6 +17,7 @@ export default function MainActive(){
     const [active,setactive] = useState('activebutton1')
     const [addtask,setAddTask] = useState(false)
     const [addprioject,setaddproject] = useState(false)
+    // const [actiuvesuccessalert , setactiuvesuccessalert] = useState(false)
     const HandleButtonActive = (buttonactive) => {
         setactive(buttonactive)
     }
@@ -137,6 +139,12 @@ export default function MainActive(){
             orederhuman: "Виктор Игорович"
         }
     ];
+
+    // const safertaskinlist = () =>{
+ 
+    //     setactiuvesuccessalert(true)
+          
+    // }
     
     function ChekActive(taskactivepin){
         if (taskactivepin === "active"){
@@ -150,9 +158,16 @@ export default function MainActive(){
     return(
         <>
         <div className="alerts">
+            {/* {actiuvesuccessalert &&(
+                <SuccessAlertGreen
+                TextSuccessAlert='Ваша задача сохранилась успешно'
+                className='positionalerts'
+                />
+            )} */}
             {addtask && (
                 <AddTaskAlert
                 closedAddtask={() => setAddTask(false)}
+                safetaskinlist={() => setAddTask(false)}
                 />
             )}
             {addprioject && (
