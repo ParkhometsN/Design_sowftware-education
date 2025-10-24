@@ -2,10 +2,9 @@ import { useState, useEffect } from "react"
 import EnterAppDSW from "./components/EnterApp"
 import DashBoard from "./components/DashBoard";
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-
   useEffect(() => {
     const savedAuth = localStorage.getItem('isLoggedIn');
     if (savedAuth === 'true') {

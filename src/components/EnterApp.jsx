@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainButton from './ui/main_button.jsx';
 import MainInput from './ui/input';
 import ErrorAlertRed from './Alerts/ErrorAlertRED.jsx';
 import SuccessAlertGreen from './Alerts/SuccessALertGreen.jsx';
+import axios from "axios";
 
 function EnterAppDSW({onLoginSuccess}) {
   const [email, setEmail] = useState('');
+  const [allEmails, setAllEmails] = useState([]); // Добавляем состояние для хранения email'ов
   const [alert, setAlert] = useState({
     visible: false,
     type: '',
     message: '',
   });
 
-  const validEmails = ['test@example.com', 'user@example.com', 'parkhometsnikita@gmail.com', '@', 'vika@mail.com','nv@gmail.com'];
+  // Используем useEffect для загрузки данных при монтировании компонента
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/users').then(r => {
+      const arrayOfUsers = r.data.data;
+      const emails = arrayOfUsers.map(user => {
+        return user.email;
+      });
+      setAllEmails(emails); // Сохраняем email'ы в состоянии
+      console.log(emails);
+    }).catch(error => {
+      console.error('Ошибка при загрузке пользователей:', error);
+    });
+  }, []); // Пустой массив зависимостей означает, что эффект выполнится только один раз при монтировании
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,7 +38,6 @@ function EnterAppDSW({onLoginSuccess}) {
     setAlert({ visible: false, type: '', message: '' }); 
   };
 
-  
   const handleLogin = () => {
     if (!isValidEmail(email)) {
       setAlert({
@@ -35,7 +48,7 @@ function EnterAppDSW({onLoginSuccess}) {
       return;
     }
 
-    if (validEmails.includes(email)) {
+    if (allEmails.includes(email)) {
       setAlert({
         visible: true,
         type: 'success',
@@ -81,7 +94,7 @@ function EnterAppDSW({onLoginSuccess}) {
       <MainButton
         className="max-w-[542px] w-full"
         textbutton={"Вход"}
-        type='sumbit'
+        type='submit' // Исправлена опечатка
         onClick={handleLogin}
       />
     </>
