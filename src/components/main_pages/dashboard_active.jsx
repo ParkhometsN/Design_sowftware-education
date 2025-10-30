@@ -144,7 +144,9 @@ export default function MainActive() {
         project.TitleOFProject.toLowerCase().includes(search.toLowerCase())
     );
 
-
+    const clickproject = (task) => {
+        console.log('нажата кнопка', task.TitleOFProject)
+    }
     const Savetask = () => {
         setAddTask(false)
         setactiuvesuccessalert(true)
@@ -276,6 +278,7 @@ export default function MainActive() {
                                             <Col key={index} span={12}>
                                                 <ProjectButton
                                                     key={index}
+                                                    onclick={() => clickproject(task)}
                                                     TitleProject={task.TitleOFProject}
                                                     DescriptionProject={task.DescriptionTask}
                                                     TimeOFproject={task.TimeOFTask}

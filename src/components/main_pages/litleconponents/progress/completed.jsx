@@ -1,7 +1,7 @@
 export default function Copmleted(){
     return(
         <>
-        <p className="Copmleted">Сделано</p>
+        <span className="Copmleted">Сделано</span>
         </>
     )
 }

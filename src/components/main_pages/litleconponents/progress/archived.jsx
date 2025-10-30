@@ -1,7 +1,7 @@
 export default function Archived(){
     return(
         <>
-        <p className="archoved">Отложенное</p>
+        <span className="archoved">Отложенное</span>
         </>
     )
 }

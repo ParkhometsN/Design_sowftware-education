@@ -1,7 +1,7 @@
-export default function ProjectButton({TitleProject,orederhuman,TimeOFproject,DescriptionProject,activepin,newmm}){
+export default function ProjectButton({onclick,TitleProject,orederhuman,TimeOFproject,DescriptionProject,activepin,newmm}){
     return(
         <>
-        <div className="projectbutton background_shadowdd ">
+        <div onClick={onclick} className="projectbutton background_shadowdd ">
             <p className="title_ofproject">{TitleProject}</p>
             <div className="time_order">
                 {/* <p className="orederhuman">Зказчик: {orederhuman}</p> */}

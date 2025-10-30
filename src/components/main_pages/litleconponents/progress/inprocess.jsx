@@ -1,7 +1,7 @@
 export default function InProcess(){
     return(
         <>
-        <p className="InProcess">В процессе</p>
+        <span className="InProcess">В процессе</span>
         </>
     )
 }
