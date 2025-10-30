@@ -3,16 +3,12 @@ import {useState} from "react";
 import { Input } from 'antd';
 const { TextArea } = Input;
 import { Button, Dropdown} from 'antd';
-import { TimePicker } from 'antd';
-import dayjs from 'dayjs';
+import Selectdeadline from "../ui/selectdedline";
 
 export default function AddTaskAlert({closedAddtask,safetaskinlist}){
     const [value, setValue] = useState('');
     const [selectedEmployee, setSelectedEmployee] = useState(null);
     const [selectedProject, setSelectedProject] = useState(null);
-    const format = 'HH:mm:ss';
-    const startTime = dayjs('12:08:23', 'HH:mm:ss');
-    const endTime = dayjs('12:08:23', 'HH:mm:ss');
     const realtime = new Date();
     const onlyDate = realtime.toLocaleDateString();
     const items = [
@@ -32,7 +28,6 @@ export default function AddTaskAlert({closedAddtask,safetaskinlist}){
            onClick: () => setSelectedEmployee('Мария Сидорова')
        }
     ];
-
     const project_button = [
         {
            key: 'chooseproject_1',
@@ -62,7 +57,7 @@ export default function AddTaskAlert({closedAddtask,safetaskinlist}){
     };
     return(
         <>
-        <div className="addtask_container">
+        <div className="addtask_container addtaskalerttttt">
             <div className="Addtaskalert">
                 <div className="title_closed">
                     <p>Добавить задачу</p>
@@ -74,12 +69,16 @@ export default function AddTaskAlert({closedAddtask,safetaskinlist}){
                         <div className="linetitle"></div>
                     </div>
                     <div className="inputs_">
-                        <TextArea
-                            value={value}
-                            onChange={e => setValue(e.target.value)}
-                            placeholder="Описание"
-                            autoSize={{ minRows: 6, maxRows: 5 }}
-                        />
+                        <div className="weiojfpiw">
+                            <TextArea
+                                className="textareakddkd"
+                                value={value}
+                                onChange={e => setValue(e.target.value)}
+                                placeholder="Описание"
+                                autoSize={{ minRows: 6, maxRows: 5 }}
+                            />
+                        </div>
+                        
                         <input 
                             type="file" 
                             id="fileInput" 
@@ -100,7 +99,7 @@ export default function AddTaskAlert({closedAddtask,safetaskinlist}){
                                 placement="bottomLeft"
                                 trigger={['click']}
                             >
-                                <Button className="dropdownbuttonchoose">
+                            <Button className="dropdownbuttonchoose">
                                     {selectedEmployee || 'Выбрать сотрудника'} 
                                     <svg className="svg_size" xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
                                         <path fillRule="evenodd" clipRule="evenodd" d="M0.775151 0.774947C0.950933 0.599384 1.18921 0.500773 1.43765 0.500773C1.68609 0.500773 1.92437 0.599384 2.10015 0.774947L5.50015 4.17495L8.90015 0.774947C8.98598 0.682839 9.08948 0.608961 9.20448 0.557721C9.31948 0.506481 9.44362 0.478929 9.5695 0.476708C9.69538 0.474487 9.82041 0.497643 9.93715 0.544794C10.0539 0.591945 10.1599 0.662126 10.2489 0.75115C10.338 0.840173 10.4082 0.946215 10.4553 1.06295C10.5025 1.17969 10.5256 1.30472 10.5234 1.4306C10.5212 1.55648 10.4936 1.68062 10.4424 1.79562C10.3911 1.91062 10.3173 2.01412 10.2252 2.09995L6.16265 6.16245C5.98687 6.33801 5.74859 6.43662 5.50015 6.43662C5.25171 6.43662 5.01343 6.33801 4.83765 6.16245L0.775151 2.09995C0.599588 1.92417 0.500977 1.68589 0.500977 1.43745C0.500977 1.18901 0.599588 0.950729 0.775151 0.774947Z" fill="#0051FF"/>
@@ -120,10 +119,7 @@ export default function AddTaskAlert({closedAddtask,safetaskinlist}){
                                 </Button>
                             </Dropdown>
                         </div>
-                        <div className="timepcik">
-                            <Button type="primary">сегодня</Button>
-                            <TimePicker.RangePicker  placeholder={["Время начала", "Время окончания"]}  className="timepicker_custom" defaultValue={[startTime, endTime]} format={format} />
-                        </div>  
+                        <Selectdeadline/>
                         <div className="time_and_button qergeqrg">
                             <p>{onlyDate}</p>
                                <Button onClick={safetaskinlist} type="primary">
